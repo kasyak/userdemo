@@ -1,0 +1,13 @@
+spring.cloud.vault:
+  host: localhost
+  port: 8200
+  scheme: https
+  uri: https://localhost:8200
+  connection-timeout: 5000
+  read-timeout: 15000
+  authentication: APPROLE
+  app-role:
+    role-id: demo_role_id
+    secret-id: db_password
+  config:
+    order: -10
