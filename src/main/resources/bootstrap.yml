@@ -2,12 +2,10 @@ spring.cloud.vault:
   host: localhost
   port: 8200
   scheme: https
-  uri: https://localhost:8200
-  connection-timeout: 5000
-  read-timeout: 15000
+  path: secret/userdemo
+  namespace: userdemo
+  token: hvs.ruCdjWnausLO4Jw8udalnTsm
   authentication: APPROLE
   app-role:
-    role-id: demo_role_id
-    secret-id: db_password
-  config:
-    order: -10
+    role-id: 54ed435d-159e-ec7a-751a-d99b3606079a
+    secret-id: c5971483-b96d-fc6f-b1bb-077a489e63cb

@@ -1,7 +1,7 @@
-package com.example.controller;
+package com.example.rest;
 
-import com.example.domain.User;
-import com.example.domain.UserReport;
+import com.example.model.User;
+import com.example.model.UserReport;
 import com.example.service.UserRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
