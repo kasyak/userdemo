@@ -4,7 +4,6 @@ source scripts/my-functions.sh
 
 MYSQL_VERSION="8.0.32"
 VAULT_VERSION="1.13.0"
-CONSUL_VERSION="1.15.1"
 
 echo
 echo "Starting environment"
@@ -48,11 +47,7 @@ docker run -d --rm --name mysql \
 echo
 wait_for_container_log "mysql" "port: 3306"
 
-echo
-wait_for_container_log "cassandra" "Created default superuser role"
-
 source scripts/unseal-vault-enable-approle-databases.sh
-
 source scripts/setup-spring-cloud-vault-approle-mysql.sh
 
 echo

@@ -1,31 +1,24 @@
 package com.example.config;
-
-import org.springframework.beans.factory.annotation.Value;
+/*
 import org.springframework.context.annotation.Configuration;
 import org.springframework.vault.annotation.VaultPropertySource;
 import org.springframework.vault.authentication.AppRoleAuthentication;
 import org.springframework.vault.authentication.AppRoleAuthenticationOptions;
 import org.springframework.vault.authentication.ClientAuthentication;
-import org.springframework.vault.authentication.TokenAuthentication;
 import org.springframework.vault.client.VaultEndpoint;
 import org.springframework.vault.config.AbstractVaultConfiguration;
-import org.springframework.vault.support.VaultToken;
 
 import java.net.URI;
 
-//@Configuration
-@VaultPropertySource(
-        value = "${datasource.vault-creds-path}",
-        propertyNamePrefix = "datasource.",
-        renewal = VaultPropertySource.Renewal.ROTATE)
-@VaultPropertySource(
-        value = "${app.vault-kv-secret-path}",
-        propertyNamePrefix = "secret.movie-service.")
+@Configuration
+@VaultPropertySource(value = "${spring.vault.secret-path}")
+@VaultPropertySource(value = "${spring.app.vault-kv-secret-path}")
+//VaultPropertySource(value = "${spring.app.vault-kv-secret-path}")
 public class VaultConfiguration extends AbstractVaultConfiguration {
 
     @Override
     public VaultEndpoint vaultEndpoint() {
-        String uri = getEnvironment().getProperty("vault.uri");
+        String uri = getEnvironment().getProperty("spring.vault.uri");
         if (uri == null) {
             throw new IllegalStateException();
         }
@@ -34,7 +27,7 @@ public class VaultConfiguration extends AbstractVaultConfiguration {
 
     @Override
     public ClientAuthentication clientAuthentication() {
-        String roleId = getEnvironment().getProperty("vault.app-role.role-id");
+        String roleId = getEnvironment().getProperty("spring.vault.app-role.role-id");
         if (roleId == null) {
             throw new IllegalStateException();
         }
@@ -45,6 +38,7 @@ public class VaultConfiguration extends AbstractVaultConfiguration {
         return new AppRoleAuthentication(options, restOperations());
     }
 }
+*/
 
 /*
 @Configuration

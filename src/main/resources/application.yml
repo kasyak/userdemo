@@ -1,9 +1,23 @@
-spring.jpa.properties.hibernate.dialect = org.hibernate.dialect.PostgreSQLDialect
-spring.jpa.hibernate.show-sql=true
-spring.datasource.url=jdbc:postgresql://localhost:5432/ddmitry
-spring.datasource.username=ddmitry
-spring.datasource.password=qwerty1
-spring.datasource.initialization-mode=always
-spring.datasource.initialize=true
-spring.datasource.continue-on-error=true
-spring.jpa.hibernate.ddl-auto=update
+spring:
+  application:
+    name: userdemo
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties.hibernate.dialect: org.hibernate.dialect.PostgreSQLDialect
+  datasource:
+    url: jdbc:postgresql://localhost:5432/ddmitry
+    vault-creds-path: database/userdemo
+    username: ddmitry
+    initialization-mode: always
+    initialize: true
+    continue-on-error: true
+  app:
+    vault-kv-secret-path: secret/movie-service
+  vault:
+    uri: http://${VAULT_HOST:localhost}:${VAULT_POST:8200}
+    secret-path: secret/userdemo
+    app-role:
+      role-id: 54ed435d-159e-ec7a-751a-d99b3606079a
+      secret-id: c5971483-b96d-fc6f-b1bb-077a489e63cb
