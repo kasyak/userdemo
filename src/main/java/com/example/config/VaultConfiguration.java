@@ -1,5 +1,5 @@
 package com.example.config;
-/*
+
 import org.springframework.context.annotation.Configuration;
 import org.springframework.vault.annotation.VaultPropertySource;
 import org.springframework.vault.authentication.AppRoleAuthentication;
@@ -38,7 +38,7 @@ public class VaultConfiguration extends AbstractVaultConfiguration {
         return new AppRoleAuthentication(options, restOperations());
     }
 }
-*/
+
 
 /*
 @Configuration
