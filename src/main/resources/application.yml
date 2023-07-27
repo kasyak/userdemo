@@ -1,10 +1,6 @@
 spring:
   application:
     name: userdemo
-  datasource:
-    vault-creds-path: database/userdemo
-  app:
-    vault-kv-secret-path: secret/movie-service
   vault:
     uri: http://${VAULT_HOST:localhost}:${VAULT_POST:8200}
     secret-path: secret/userdemo
