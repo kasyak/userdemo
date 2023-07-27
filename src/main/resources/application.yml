@@ -1,9 +1,11 @@
+spring.application.name: userdemo
 spring:
-  application:
-    name: userdemo
   vault:
-    uri: http://${VAULT_HOST:localhost}:${VAULT_POST:8200}
-    secret-path: secret/userdemo
+    uri: https://localhost:8200
+    path: secret/userdemo
+    namespace: userdemo
+    token: hvs.ruCdjWnausLO4Jw8udalnTsm
+    authentication: APPROLE
     app-role:
       role-id: 54ed435d-159e-ec7a-751a-d99b3606079a
       secret-id: c5971483-b96d-fc6f-b1bb-077a489e63cb

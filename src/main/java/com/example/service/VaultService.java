@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.vault.core.VaultOperations;
 import org.springframework.vault.support.VaultResponseSupport;
 
-public class VaultUsage {
+public class VaultService {
     @Autowired
     private VaultOperations operations;
 
